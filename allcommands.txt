@@ -1,0 +1,498 @@
+    1  git clone https://github.com/docker/welcome-to-docker
+    2  cd welcome-to-docker
+    3  rm -rf .git
+    4  git init
+    5  echo hello > file1.txt
+    6  echo hello > file2.txt
+    7  git status
+    8  git add .
+    9  git status
+   10  echo world >> file1.txt
+   11  git status
+   12  git add file1.txt
+   13  git status
+   14  git commit -m "Initial commit."
+   15  echo 2 >> file1.txt
+   16  git status
+   17  git add file1.txt 
+   18  git status
+   19  git commit
+   20  git status
+   21  echo test >> file1.txt
+   22  git commit -a -m "Fixed the bug that prevented the users from signing up."
+   23  rm file2.txt
+   24  git status
+   25  git ls-files
+   26  git add file2.txt
+   27  git ls-files
+   28  git status
+   29  git commit -m "Removed unused code."
+   30  ls
+   31  mv file1.txt main.js
+   32  ls
+   33  git status
+   34  git add file1.txt
+   35  git add main.js
+   36  git status
+   37  git mv main.js file1.js
+   38  git status
+   39  git commit -m "Refactor code."
+   40  ls
+   41  echo hello > file2.txt
+   42  git status
+   43  git add file2.txt
+   44  git status
+   45  git mv file2.txt fileChanged.txt
+   46  git status
+   47  ls
+   48  git commit -m "Own commit."
+   49  ls
+   50  mkdir logs
+   51  echo hello > logs/dev.log
+   52  git staus
+   53  git status
+   54  echo logs/ > .gitignore
+   55  code .gitignore
+   56  git status
+   57  git add .gitignore 
+   58  git commit -m "Add gitignore."
+   59  ls
+   60  mkdir bin
+   61  echo hello > bin/app.bin
+   62  git status
+   63  git add .
+   64  git commit -m "Add bin."
+   65  git status
+   66  git add .
+   67  git commit -m "Include bin/ in gitignore."
+   68  echo helloworld>bin/app.bin
+   69  git status
+   70  git ls-files
+   71  git rm -h
+   72  git rm --cached bin/
+   73  git rm -h
+   74  git rm --cached -r bin/
+   75  git ls-files
+   76  git status
+   77  git commit -m "Removed the bin directory that was accidentally committed."
+   78  git status
+   79  clear
+   80  echo sky >> file1.js
+   81  echo sky >> file2.js
+   82  git status
+   83  git status -s
+   84  git add file1.js 
+   85  git status -s
+   86  echo ocean >> file1.js
+   87  git status -s
+   88  git add file1.js
+   89  git status -s
+   90  git add file2.js 
+   91  git status -s
+   92  clear
+   93  git diff --staged
+   94  git status -s
+   95  git config --global diff.tool vscode
+   96  git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+   97  git config --global -e
+   98  git difftool
+   99  ls
+  100  echo testing >> file1.js
+  101  git difftool
+  102  get difftool --staged
+  103  git difftool --staged
+  104  git log
+  105  clear
+  106  git log --online
+  107  git log --oneline
+  108  git show HEAD~1:.gitignore
+  109  git show HEAD~1
+  110  mkdir my-test-folder
+  111  cd my-test-folder/
+  112  clear
+  113  git init
+  114  echo hello > f1.txt
+  115  echo world > f2.txt
+  116  git status
+  117  git ls-files
+  118  git status -s
+  119  git add .
+  120  git status -s
+  121  git status
+  122  git diff --staged
+  123  git commit -h
+  124  git commit -m "Initial commit."
+  125  touch testfile.txt
+  126  git status -s
+  127  git status
+  128  git add testfile.txt 
+  129  git commit -a -m "Test commit"
+  130  git status -s
+  131  git status
+  132  git diff --stageed
+  133  git diff --staged
+  134  git ls-files
+  135  echo world >> f1.txt
+  136  echo hello >> f2.txt
+  137  touch test2file.txt
+  138  git status
+  139  git commit -a -m "Test 2 commit."
+  140  git status
+  141  echo 2 >> f1.txt
+  142  echo 2 >> f2.txt
+  143  git status
+  144  git commit -m "Test 3 commit."
+  145  git status
+  146  git add f1.txt f2.txt
+  147  git commit -m "Test 3 commit."
+  148  git status
+  149  echo 3 >> f1.txt
+  150  echo 3 >> f2.txt
+  151  git status
+  152  git add f1.txt f2.txt
+  153  git commit -a -m "Test 4 commit."
+  154  git status
+  155  git status 
+  156  git rm test2file.txt
+  157  git rm test2file.txt 
+  158  git remove --cached test2file.txt
+  159  git rm --cached test2file.txt
+  160  rm test2file.txt 
+  161  git status
+  162  git status -s
+  163  git status -s
+  164  clear
+  165  git log --oneline
+  166  git show HEAD
+  167  git show HEAD~1
+  168  echo updating >> f2.txt
+  169  git diff
+  170  git add f2.txt
+  171  git restore --staged f2.txt
+  172  git status -s
+  173  clear
+  174  git init
+  175  touch f1.txt f2.txt
+  176  git status
+  177  git status -s
+  178  git ls-files
+  179  git add .
+  180  git status -s
+  181  git diff --staged
+  182  echo hello > f1.txt
+  183  echo world > f2.txt
+  184  git diff --staged
+  185  git status -s
+  186  git add .
+  187  git status -s
+  188  git commit -m "Initial commit."
+  189  git log
+  190  git show HEAD
+  191  echo world >> f1.txt
+  192  git status -s
+  193  git diff
+  194  git status
+  195  git add f1.txt
+  196  git status -s
+  197  git restore --staged f1.txt
+  198  git log
+  199  git log --oneline
+  200  git log --oneline--stat
+  201  git log --oneline --stat
+  202  git log --stat
+  203  git log --oneline
+  204  git log --oneline
+  205  git log --oneline fb0d184..edb3594
+  206  git log --oneline toc.txt
+  207  git log --oneline -- toc.txt
+  208  git config --global alias.lg "log --pretty=format:'%an committed %h'"
+  209  git config --global -e
+  210  git lg
+  211  git config --global aliias.unstage "restore --staged ."
+  212  git unstage
+  213  git config --global -e
+  214  git config --global alias.unstage "restore --staged ."
+  215  git unstage
+  216  clear
+  217  git log --oneline
+  218  git log HEAD~2
+  219  git show HEAD~2
+  220  git log --oneline
+  221  git show HEAD~2:sections/creating-snapshots/staging-changes.txt
+  222  clear
+  223  git log --oneline
+  224  git checkout dad47ed
+  225  git log --oneline
+  226  git log --oneline --all
+  227  git bisect start
+  228  git checkout master
+  229  clear
+  230  git bisect start
+  231  clear
+  232  git checkout master
+  233  clear
+  234  git bisect bad
+  235  git log --oneline
+  236  git bisect good ca49180
+  237  git log --oneline
+  238  git log --oneline
+  239  git log --oneline --all
+  240  git bisect good 
+  241  git log --oneline --all
+  242  git bisect good
+  243  git log --oneline --all
+  244  git bisect bad
+  245  git log --oneline --all
+  246  git bisect bad
+  247  git bisect reset
+  248  git log --oneline --all
+  249  git checkout master
+  250  git log --oneline --all
+  251  git bisect reset
+  252  clear
+  253  git status
+  254  git shortlog
+  255  git shortlog -n
+  256  git shortlog -n -s
+  257  git shortlog -n -s -e
+  258  git shortlog -n -s -e --brefore="one week ago"
+  259  git shortlog -n -s -e --brefore="yesterday"
+  260  git shortlog -n -s -e --before="yesterday"
+  261  cls
+  262  clear
+  263  ls
+  264  git log toc.txt
+  265  git log --oneline toc.txt
+  266  git log --oneline --stat toc.txt
+  267  git log --oneline --patch toc.txt
+  268  git status
+  269  git status 0s
+  270  git status -s
+  271  echo hello>file1.txt
+  272  echo world>file2.txt
+  273  dir
+  274  git status
+  275  git status -s
+  276  git add .
+  277  git config --global core.autocrlf true
+  278  git status
+  279  git status -s
+  280  git log -s
+  281  git diff --staged
+  282  git commit -m "Initial commit"
+  283  git log
+  284  git show
+  285  git show HEAD
+  286  echo world>>file1.txt
+  287  git status
+  288  git add file1.txt
+  289  git status
+  290  git restore --staged file1.txt
+  291  git status
+  292  git show HEAD
+  293  git show HEAD:file1.txt
+  294  git ls-tree
+  295  git ls-tree HEAD
+  296  git log
+  297  git log --oneline
+  298  git diff
+  299  git diff --staged
+  300  git show HEAD
+  301  git status
+  302  git status -s
+  303  git log
+  304  git show HEAD~2
+  305  git log --oneline
+  306  git log --patch -2
+  307  git show --oneline
+  308  git log --oneline
+  309  git log --author="Sagar Niroula" --oneline
+  310  git log --grep="commit"
+  311  git show HEAD:file1.txt
+  312  git log --stat file1.txt
+  313  git diff HEAD~1 HEAD
+  314  git checkout HEAD~1
+  315  git show
+  316  git log --oneline
+  317  git checkout master
+  318  git log --oneline
+  319  git checkout 4877
+  320  git log --oneline
+  321  git log --oneline --all
+  322  git checkout master
+  323  git blame file1.txt
+  324  git log --oneline
+  325  git tag v1.0 7db
+  326  git tag v1.0 7db5f64
+  327  git log --oneline
+  328  git checkout v1.0
+  329  git log --oneline --all
+  330  git log --oneline
+  331  git log --oneline --all
+  332  git checkout master
+  333  clear
+  334  exit
+  335  git log --oneline --all --graph
+  336  git switch -C feature/change-password
+  337  git log --oneline --graph
+  338  echo hello>change-password.txt
+  339  git add .
+  340  git commit -m "Build the change password form."
+  341  git log --oneline --graph
+  342  git switch master
+  343  code objectives.txt 
+  344  git add .
+  345  git commit -m "Update objectives.txt"
+  346  git log --oneline --all --graph
+  347  git merge feature/change-password
+  348  git log --oneline --all --graph
+  349  git branch --merged
+  350  git branch -d bugfix/login-form 
+  351  git branch --no-merged
+  352  git branch 
+  353  git switch -C bugfix/change-password
+  354  code change-password.txt 
+  355  git add .
+  356  git commit -m "Update change-password.txt"
+  357  git switch master 
+  358  code change-password.txt 
+  359  git add .
+  360  git commit -m "Update change-password.txt"
+  361  git merge bugfix/change-password 
+  362  git status
+  363  code change-password.txt 
+  364  git add change-password.txt 
+  365  git status
+  366  git commit
+  367  git config --global merge.tool p4merge
+  368  git config --global mergetool.p4merge.path "C:\Program Files\Perforce\p4merge"
+  369  git merge bugfix/change-password 
+  370  git switch bugfix/change-password 
+  371  code change-password.txt 
+  372  git add .
+  373  git commit -m "Updated change-password.txt2"
+  374  git switch master
+  375  code change-password.txt 
+  376  git add .
+  377  git commit -m "Updated change-password.txt2"
+  378  git merge bugfix/change-password 
+  379  code change-password.txt 
+  380  git mergetool
+  381  git add .
+  382  git commit
+  383  git log --oneline --all --graph
+  384  git reset --hard HEAD~1
+  385  git log --oneline --all --graph
+  386  git init
+  387  git status
+  388  echo hello>file1.txt
+  389  echo world>file2.txt
+  390  git status -s
+  391  git add .
+  392  git status -s
+  393  git commit -m "Two initial files are created."
+  394  git status -s
+  395  git branch feature/login
+  396  git switch feature/login 
+  397  git branch
+  398  echo world >> file1.txt
+  399  git commit -am "File1.txt is changed/updated."
+  400  git status -s
+  401  git log --oneline --all
+  402  git switch master
+  403  git log master ..feature/login 
+  404  git diff master feature/login
+  405  git diff master..feature/login
+  406  git merge feature/login 
+  407  git branch --merged
+  408  git branch --no-merged
+  409  git branch -d feature/login 
+  410  git branch -C feature/logout
+  411  git branch
+  412  git switch feature/logout 
+  413  code file1.txt
+  414  git commit -am "Written 'blue' to file1.txt"
+  415  git switch master
+  416  code file1.txt 
+  417  git commit -am "Written 'green' to file1.txt"
+  418  git merge feature/logout 
+  419  git mergetool
+  420  git status -s
+  421  git commit -am "Merge conflict on file1 and file2 is solved."
+  422  git branch --no-merged
+  423  git branch -d feature/logout 
+  424  code file1.txt
+  425  git branch
+  426  git switch -C bugfix/login
+  427  code file1.txt
+  428  git commit -am "Written 'orange' to file1.txt"
+  429  git switch master
+  430  code file2.txt
+  431  git commit -am "Written 'green' to file2.txt"
+  432  git log --oneline --all --graph
+  433  git rebase master
+  434  git log --oneline --all --graph
+  435  git switch bugfix/login 
+  436  git rebase master
+  437  git switch master
+  438  git log --oneline --all --graph
+  439  git merge bugfix/login 
+  440  git log --oneline --all --graph
+  441  git log --oneline --all --graph
+  442  git switch -C feature/shopping-cart
+  443  code toc.txt
+  444  git add .
+  445  git commit -m "Write mountain to toc"
+  446  git switch master
+  447  git log --oneline --all --graph
+  448  git cherry-pick bccbaaa
+  449  git log --oneline --all --graph
+  450  git switch -C feature/send-email
+  451  echo river>toc.txt
+  452  git commit -am "Update toc.txt"
+  453  git switch master
+  454  git restore --source=feature/send-email -- toc.txt
+  455  git status -s
+  456  cat toc.txt 
+  457  git status
+  458  git log --oneline --all --graph
+  459  echo hello file1.txt
+  460  echo hello>file1.txt
+  461  git commit -am "Add file1"
+  462  git status -s
+  463  git commit -am "Add file1"
+  464  git add .
+  465  git commit -m "Add file1"
+  466  git log --oneline --all --graph
+  467  git pull
+  468  git log --oneline --all --graph
+  469  git reset --hard HEAD~1
+  470  git log --oneline --all --graph
+  471  git pull --rebase
+  472  git log --oneline --all --graph
+  473  git push origin
+  474  git tag v1.0
+  475  git log --oneline 
+  476  git push origin v1.0
+  477  git push origin --delete v1.0
+  478  git log --oneline 
+  479  git tag -d v1.0
+  480  git switch -C feature/change-password
+  481  git push
+  482  git branch -vv
+  483  git branch -r
+  484  git push -u origin feature/change-password 
+  485  git branch -vv
+  486  git branch -r
+  487  git push -d origin feature/change-password 
+  488  git branch -r
+  489  git branch -vv
+  490  git branch
+  491  git switch master
+  492  git branch -d feature/change-password 
+  493  git switch main
+  494  git branch -d feature/change-password 
+  495  git reflog
+  496  history
+  497  history>/
+  498  history>allcommands.txt
